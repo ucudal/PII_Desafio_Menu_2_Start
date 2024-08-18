@@ -7,7 +7,7 @@ width="150"/>
 
 ### Programación II
 
-# Desafío menú #1: Restaurante simple
+# Desafío menú #2: Nuevas responsabilidades en el restaurante
 
 ## Objetivo
 
