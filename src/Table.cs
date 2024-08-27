@@ -1,11 +1,13 @@
 namespace Ucu.Poo.Restaurant;
 
+using System.Collections;
+
 /// <summary>
 /// Representa una mesa en el restaurante.
 /// </summary>
 public class Table
 {
-    private Order order;
+    private ArrayList order = new ArrayList();
 
     public int Number { get; set; }
     public bool IsOccupied { get; set; }
@@ -18,29 +20,21 @@ public class Table
     public void Ocupy()
     {
         this.IsOccupied = true;
-        this.order = new Order();
     }
 
     public void Free()
     {
         this.IsOccupied = false;
-        this.order  = null;
+        this.order.Clear();
     }
 
     public void AddOrder(Dish dish)
     {
-        this.order.AddOrder(dish);
+        this.order.Add(dish);
     }
 
     public bool HasOrders()
     {
-        if (this.order != null)
-        {
-            return this.order.HasOrders();
-        }
-        else
-        {
-            return false;
-        }
+        return this.order.Count > 0;
     }
 }
