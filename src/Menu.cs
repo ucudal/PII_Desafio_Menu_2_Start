@@ -1,35 +1,36 @@
-namespace Ucu.Poo.Restaurant;
+using System.Collections.Generic;
 
-using System.Collections;
-
-/// <summary>
-/// Representa el conjunto de platillos <see cref="Dish"/> disponibles en el
-/// restaurante.
-/// </summary>
-public class Menu
+namespace Ucu.Poo.Restaurant
 {
-    private ArrayList dishes = new ArrayList();
-
-    public void AddDish(Dish dish)
+    /// <summary>
+    /// Representa el conjunto de platillos <see cref="Dish"/> disponibles en el
+    /// restaurante.
+    /// </summary>
+    public class Menu
     {
-        this.dishes.Add(dish);
-    }
+        private List<Dish> dishes = new List<Dish>();
 
-    public void RemoveDish(Dish dish)
-    {
-        this.dishes.Remove(dish);
-    }
-
-    public Dish GetDishByName(string name)
-    {
-        foreach (Dish dish in this.dishes)
+        public void AddDish(Dish dish)
         {
-            if (dish.Name == name)
-            {
-                return dish;
-            }
+            this.dishes.Add(dish);
         }
 
-        return null;
+        public void RemoveDish(Dish dish)
+        {
+            this.dishes.Remove(dish);
+        }
+
+        public Dish GetDishByName(string name)
+        {
+            foreach (Dish dish in this.dishes)
+            {
+                if (dish.Name == name)
+                {
+                    return dish;
+                }
+            }
+
+            return null;
+        }
     }
 }
