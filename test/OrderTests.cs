@@ -11,7 +11,7 @@ namespace Ucu.Poo.Restaurant.Tests
             Order order = new Order();
             Dish dish = new Dish("Pasta", 12.99, true);
 
-            order.AddOrder(dish);
+            order.AddToOrder(dish);
 
             Assert.That(order.HasOrders(), Is.True);
         }
@@ -21,7 +21,7 @@ namespace Ucu.Poo.Restaurant.Tests
         {
             Order order = new Order();
             Dish dish = new Dish("Pasta", 12.99, true);
-            order.AddOrder(dish);
+            order.AddToOrder(dish);
 
             bool hasOrders = order.HasOrders();
 
@@ -44,8 +44,8 @@ namespace Ucu.Poo.Restaurant.Tests
             Order order = new Order();
             Dish dish1 = new Dish("Pasta", 12.99, true);
             Dish dish2 = new Dish("Pizza", 15.99, false);
-            order.AddOrder(dish1);
-            order.AddOrder(dish2);
+            order.AddToOrder(dish1);
+            order.AddToOrder(dish2);
             double expectedTotal = 12.99 + 15.99;
 
             double total = order.GetTotal();
